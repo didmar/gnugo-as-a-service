@@ -1,5 +1,6 @@
 from flask import Flask
 from flask.ext.cors import CORS
+from flaskrun import flaskrun
 import os
 import re
 import json
@@ -69,4 +70,4 @@ def gtpCommand(command):
     return msg, 200 if isok else 400
 
 if __name__ == '__main__':
-    app.run()
+    flaskrun(app)
