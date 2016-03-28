@@ -1,4 +1,5 @@
 from flask import Flask
+from flask.ext.cors import CORS
 import os
 import re
 import json
@@ -52,6 +53,7 @@ def parseBoard(msg):
             'boardSize': boardSize}
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/showboard')
 def showboard():
