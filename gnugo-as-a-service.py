@@ -40,7 +40,7 @@ def parseBoard(msg):
     whiteCaptures = None
     for line in lines[2:(2+boardSize)]:
         m = re.search('^\s*\d+\s([^\d]+)\s\d+\s*.*$', line)
-        board.append(m.group(1).split(' '))
+        board.insert(0, m.group(1).split(' '))
         m = re.search('.*(WHITE \(O\)|BLACK \(X\)) has captured (\d+) stones', line)
         if m != None:
             if m.group(1).startswith('WHITE'):
